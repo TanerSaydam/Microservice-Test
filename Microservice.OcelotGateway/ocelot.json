@@ -1,0 +1,69 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{everything}", //karşı tarafa nasıl istek atacağımız
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productapi-1",
+          "Port": 8080
+        },
+        {
+          "Host": "productapi-2",
+          "Port": 8080
+        }
+      ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"RouteClaimsRequirement": {
+      //  "UserType": "registered" //token claimlerde UserType olmalı ve registered değeri olmalı. Authorization için
+      //},
+      "QoSOptions": { //quality of service
+        "ExceptionsAllowedBeforeBreaking": 3, // 3 hata sonra…
+        "DurationOfBreak": 10000, // …10 sn devre dışı bırak
+        "TimeoutValue": 3000 // 3 sn’de yanıt yoksa timeout
+      },
+      "LoadBalancer": "RoundRobin", // RoundRobin | LeastConnection | NoLoadBalance | CookieStickySessions
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "Limit": 1
+      },
+      "UpstreamPathTemplate": "/api/products/{everything}", //bize istek nasıl gelecek
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/categories/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "categoryapi",
+          "Port": 8080
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/api/categories/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}
+
+//Desteklenen politikalar (kısaca)
+//RoundRobin: Sırayla dağıtır (en yaygın).
+//LeastConnection: Aktif isteği en az olana yollar.
+//NoLoadBalance: İlk hedefe yollar (tek instance gibi davranır).
+//CookieStickySessions: “Aynı kullanıcı → aynı instance” yapışkan oturum.
+
+//"LoadBalancerOptions": {
+//  "Type": "CookieStickySessions",
+//  "Key": "ocelot-affinity",     // oluşturulacak cookie adı
+//  "ExpiryInSeconds": 3600
+//}

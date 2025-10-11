@@ -1,0 +1,59 @@
+services:
+ consul:
+  container_name: consul
+  ports:
+   - 8500:8500
+  image: hashicorp/consul:latest
+
+ ocelotgateway:
+  container_name: OcelotGateway
+  build:
+   context: .
+   dockerfile: Microservice.OcelotGateway/Dockerfile
+  image: ocelotgateway:latest
+  ports:
+   - 5001:8080
+  environment:
+   - ASPNETCORE_ENVIRONMENT=Development
+
+ yarpgateway:
+  container_name: YarpGateway
+  build:
+   context: .
+   dockerfile: Microservice.YarpGateway/Dockerfile
+  image: yarpgateway:latest
+  ports:
+   - 5002:8080
+
+ productapi-1:
+  container_name: ProductWebAPI-1
+  build:
+   context: .
+   dockerfile: Microservice.ProductWebAPI/Dockerfile
+  image: productapi:latest
+  ports:
+   - "6001:8080"
+  environment:
+   - ASPNETCORE_ENVIRONMENT=Development
+
+ productapi-2:
+  container_name: ProductWebAPI-2
+  build:
+   context: .
+   dockerfile: Microservice.ProductWebAPI/Dockerfile
+  image: productapi:latest
+  ports:
+   - "6003:8080"
+  environment:
+   - ASPNETCORE_ENVIRONMENT=Development
+
+ categoryapi:
+  container_name: CategoryWebAPI
+  build:
+   context: .
+   dockerfile: Microservice.CategoryWebAPI/Dockerfile
+  image: categoryapi:latest
+  ports:
+   - "6002:8080"
+  environment:
+   - ASPNETCORE_ENVIRONMENT=Development

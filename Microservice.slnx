@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Project Path="Microservice.CategoryWebAPI/Microservice.CategoryWebAPI.csproj" />
+  <Project Path="Microservice.OcelotGateway/Microservice.OcelotGateway.csproj" Id="bb4549d9-a381-4045-bf82-78260fe4ac79" />
+  <Project Path="Microservice.ProductWebAPI/Microservice.ProductWebAPI.csproj" />
+  <Project Path="Microservice.YarpGateway/Microservice.YarpGateway.csproj" Id="186fd6eb-80da-4f9c-b186-c5dcfee27e1e" />
+</Solution>

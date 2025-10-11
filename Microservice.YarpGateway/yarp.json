@@ -1,0 +1,59 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "productwebapi": {
+        "ClusterId": "productCluster",
+        "AuthorizationPolicy": "Anonymous", //herkes istek atabilir
+        "MaxRequestBodySize": 1000000, // In bytes. An optional override of the server's limit (30MB default). Set to -1 to disable.
+        "RateLimiterPolicy": "fixed",
+        "Match": {
+          "Methods": [ "GET", "PUT", "POST", "DELETE" ],
+          "Path": "/api/products/{**catch-all}"
+        },
+        "Transforms": [
+          {
+            "PathRemovePrefix": "/api/products"
+          }
+        ]
+      },
+      "categorywebapi": {
+        "ClusterId": "categoryCluster",
+        "AuthorizationPolicy": "ApiPolicy", //sadece bu policy de izin verilenler istek atabilir
+        "Match": {
+          "Path": "/api/categories/{**catch-all}"
+        },
+        "Transforms": [
+          {
+            "PathRemovePrefix": "/api"
+          }
+        ]
+      }
+    },
+    "Clusters": {
+      "productCluster": {
+        "LoadBalancingPolicy": "PowerOfTwoChoices", // Alternatively "FirstAlphabetical", "Random", "RoundRobin", "LeastRequests"       
+        "Destinations": {
+          "destination1": {
+            "Address": "http://productapi-1:8080/"
+          },
+          "destination2": {
+            "Address": "http://productapi-2:8080/"
+          }
+        }
+      },
+      "categoryCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://categoryapi:8080/"
+          }
+        }
+      }
+    }
+  }
+}
+
+//Desteklenen yayg�n politikalar
+//RoundRobin: S�rayla da��t�r.
+//LeastRequests: En az aktif iste�i olan hedefe g�nderir.
+//Random: Rastgele se�er.
+//PowerOfTwoChoices (varsay�lan): �ki rastgele hedeften daha az y�kl� olana g�nderir.
