@@ -1,9 +1,9 @@
-## Microservice Eðitim Programý
+## Microservice EÃ°itim ProgramÃ½
 - Architectural patterns
 - Microservice nedir?
 - Modular Monolith nedir?
 - Microservice vs Modular Monolith
-- WebAPI ile Microservice inþa edelim
+- WebAPI ile Microservice inÃ¾a edelim
 - OpenApi and Scalar
 - Health Check
 - Service Discovery (HashiCorp Consul)
@@ -11,7 +11,7 @@
 - Gateway nedir?
 - Ocelot ile Gateway
 - Docker
-- CORS politikasý
+- CORS politikasÃ½
 - Authentication
 - Authorization
 - QoS / Retry / Circuit Breaker
@@ -25,10 +25,11 @@
 - Event Sourcing Design Pattern
 - API Composition Design Pattern
 
-
+```dash
 docker run -d --name consul -p 8500:8500 hashicorp/consul:latest
 
 docker compose up -d
 docker compose down
 docker compose build
 docker compose up -d --build
+```
