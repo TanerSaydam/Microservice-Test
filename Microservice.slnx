@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path="docker-compose.yml" />
+    <File Path="README.md" />
   </Folder>
   <Project Path="Microservice.CategoryWebAPI/Microservice.CategoryWebAPI.csproj" />
   <Project Path="Microservice.OcelotGateway/Microservice.OcelotGateway.csproj" Id="bb4549d9-a381-4045-bf82-78260fe4ac79" />
