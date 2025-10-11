@@ -1,4 +1,4 @@
-## Microservice Eðitim Programý
+## Microservice Eğitim Programı
 - Architectural patterns
 - Microservice nedir?
 - Modular Monolith nedir?
