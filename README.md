@@ -3,7 +3,7 @@
 - Microservice nedir?
 - Modular Monolith nedir?
 - Microservice vs Modular Monolith
-- WebAPI ile Microservice inþa edelim
+- WebAPI ile Microservice inşa edelim
 - OpenApi and Scalar
 - Health Check
 - Service Discovery (HashiCorp Consul)
@@ -11,7 +11,7 @@
 - Gateway nedir?
 - Ocelot ile Gateway
 - Docker
-- CORS politikasý
+- CORS politikası
 - Authentication
 - Authorization
 - QoS / Retry / Circuit Breaker
