@@ -28,8 +28,8 @@
 - Database-per Service Pattern
 - API Composition Pattern
 - Event Sourcing Pattern
-Örnek reposu
 ```powershell
+//Örnek reposu
 https://github.com/TanerSaydam/EventSourcingDesignPattern
 ```
 
