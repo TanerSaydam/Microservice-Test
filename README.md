@@ -25,7 +25,7 @@
 - Event Sourcing Design Pattern
 - API Composition Design Pattern
 
-```dash
+```poweshell
 //docker cli ile tek dockerfile image dönüştür ve container olarak çalıştır
 docker build -t productwebapi .
 docker build -f ETicaret.ProductWebAPI/Dockerfile -t productwebapi .
