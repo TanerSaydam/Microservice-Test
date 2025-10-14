@@ -20,8 +20,8 @@
 - Observability
 - YARP ile Gateway
 - Ocelot vs YARP
-- Aspire
 - Transaction (Saga Pattern)
+- Aspire
 - Event Sourcing Design Pattern
 - API Composition Design Pattern
 
