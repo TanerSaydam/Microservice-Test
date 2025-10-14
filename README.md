@@ -22,10 +22,12 @@
 - Ocelot vs YARP
 - Transaction (Saga Pattern)
 - Aspire
+
+# Teorik bilgiler
 - Shared Database Anti pattern
 - Database-per Service Pattern
-- Event Sourcing Pattern
 - API Composition Pattern
+- Event Sourcing Pattern
 
 ```powershell
 //docker cli ile tek dockerfile image dönüştür ve container olarak çalıştır
