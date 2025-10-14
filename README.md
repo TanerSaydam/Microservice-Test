@@ -28,6 +28,10 @@
 - Database-per Service Pattern
 - API Composition Pattern
 - Event Sourcing Pattern
+Örnek reposu
+```powershell
+https://github.com/TanerSaydam/EventSourcingDesignPattern
+```
 
 ```powershell
 //docker cli ile tek dockerfile image dönüştür ve container olarak çalıştır
