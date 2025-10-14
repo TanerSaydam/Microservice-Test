@@ -6,7 +6,7 @@
 - WebAPI ile Microservice inşa edelim
 - OpenApi and Scalar
 - Health Check
-- Service Discovery (HashiCorp Consul)
+- Service Discovery Pattern (HashiCorp Consul)
 - Resilience Pattern (Polly)
 - Gateway nedir?
 - Ocelot ile Gateway
