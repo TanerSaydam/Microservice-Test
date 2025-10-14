@@ -17,10 +17,10 @@
 - QoS / Retry / Circuit Breaker
 - LoadBalance
 - RateLimit
-- Observability
 - YARP ile Gateway
 - Ocelot vs YARP
 - Transaction (Saga Pattern)
+- Observability
 - Aspire
 
 # Teorik bilgiler
