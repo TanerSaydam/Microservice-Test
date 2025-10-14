@@ -45,7 +45,7 @@ docker network rm network_adi
 docker network prune
 ```
 
-```dash
+```powershell
 docker run -d --name consul -p 8500:8500 hashicorp/consul:latest
 
 docker compose up -d
