@@ -29,7 +29,7 @@
 - API Composition Pattern
 - Event Sourcing Pattern
 -- Örnek reposu
-```powershell
+```dash
 https://github.com/TanerSaydam/EventSourcingDesignPattern
 ```
 
