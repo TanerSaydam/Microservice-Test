@@ -28,8 +28,8 @@
 - Database-per Service Pattern
 - API Composition Pattern
 - Event Sourcing Pattern
+-- Örnek reposu
 ```powershell
-//Örnek reposu
 https://github.com/TanerSaydam/EventSourcingDesignPattern
 ```
 
@@ -60,4 +60,18 @@ docker compose up -d
 docker compose down
 docker compose build
 docker compose up -d --build
+```
+
+## Saga Pattern
+Orchestration → Merkezî bir servis var. O, isteği sırayla diğer servislere gönderir ve her cevaba göre bir sonraki adımı belirler.
+Choreography → Her servis ortak bir kuyruktan aynı mesajı dinler, kendi işini yapar ve sonucu ayrı bir event olarak yayar. Başka servisler de o sonucu dinleyip kendi adımlarını yürütür.
+
+- RabbitMQ Docker Kodu
+```bash
+docker run -d --hostname rabbitmq --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
+
+- Örnek Reposu
+```dash
+https://github.com/TanerSaydam/SagaPattern
 ```
